@@ -1,0 +1,8 @@
+{
+    "minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"atk4/data" : "^2.3.0",
+    "require": {
+        "atk4/login": "^2.3"
+    }
+}
