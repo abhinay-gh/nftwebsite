@@ -1,0 +1,23 @@
+{
+  "name": "nftwebsite",
+  "version": "1.0.0",
+  "description": "This app contains the backend and front end for minting the NFTs of the photographs/files hosted in IPFS and to retrieve the details of them in the website.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinay-gh/nftwebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhinay-gh/nftwebsite/issues"
+  },
+  "homepage": "https://github.com/abhinay-gh/nftwebsite#readme"
+}
