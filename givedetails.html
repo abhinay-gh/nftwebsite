@@ -97,6 +97,7 @@
 			</form>
 		</div>
 	</div>
+	
 	<script>var nft2 = sessionStorage.getItem('balayya');</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src=https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js></script>
@@ -121,8 +122,13 @@
           return false;
         }
      }
-     var contaddress = "0x2817010b9B33Ed91220d58f5fFFA62982A36EB63";
+     var contaddress = "0x159B8D44fFe2925Ca6EBe581331DAdFB88Da9294";
 			var abi = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
 	{
 		"anonymous": false,
 		"inputs": [
@@ -301,6 +307,25 @@
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "_tokenId",
 				"type": "uint256"
@@ -309,6 +334,25 @@
 		"name": "getAddress",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -329,6 +373,30 @@
 		"name": "getLength",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -357,6 +425,51 @@
 		"name": "mint",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -438,154 +551,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "bytes4",
 				"name": "_interfaceID",
 				"type": "bytes4"
@@ -633,9 +598,45 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	}
-];
-		var mycontract;
+]	;
+var mycontract;
 
 	$(document).ready(async function(){
 	var IsMetamask = await CheckMetamaskConnection();
@@ -665,7 +666,7 @@
 	// const results0 =  await mycontract.methods.getDetails(nft2).send({from: acc});
      // console.log(results0.events.eventdetails.nftname.raw);
       //console.log(results1);
-	  var bruh = await mycontract.methods.getLength.call(function(error,res)
+	  /*var bruh = await mycontract.methods.getLength.call(function(error,res)
 	  {
 		if(!error){
 		//$('#totalnfts').html(res);
@@ -677,17 +678,17 @@
 			console.error("error is :" + error);
 		}
 	  });
-	  console.log("bruh:", bruh);
+	  console.log("bruh:", bruh);*/
 
-	/*var bruh = await mycontract.methods.getLength().send({from: acc});
+	var bruh = await mycontract.methods.getLength().send({from: acc});
 	  console.log(bruh);
 	var eventlength = bruh.events.eventlength.returnValues.length;    
 	console.log("bruh:", eventlength);
 	$('#totalnfts').html(eventlength);
 		
 	//console.log(res);
-	console.log("vastundha");
-		*/
+	//console.log("vastundha");
+		
 	  //console.log("bruh:", bruh);
 
 	  var det = await mycontract.methods.getDetails(nft2).send({from: acc});
@@ -697,7 +698,7 @@
 	  var eventblock = det.events.eventdetails.returnValues[2];
 	  var eventtime = det.events.eventdetails.returnValues[3];
 	  var eventnft = det.events.eventdetails.returnValues[4];
-	  eventnft = "https://ipfs.io/ipfs/"+ eventnft;
+	  //eventnft = "https://ipfs.io/ipfs/"+ eventnft;
 
 	  $('#nftnameoutput').html(eventname);
 	  $('#owneraddoutput').html(eventaddress);
@@ -780,6 +781,6 @@
 
 	  gtag('config', 'UA-23581568-13');
 	</script>
-<img src ='https://ipfs.io/ipfs/QmSYyfhv9RdNqEoTG7xcZ9BsW3ViBsL98uBkDTMNAWDd2E' > 
+
 </body>
 </html>

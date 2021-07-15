@@ -96,11 +96,11 @@ else{
 					<span class="focus-input100"></span>
 				</div-->
 
-				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+				<!--div class="wrap-input100 validate-input" data-validate = "Message is required">
 					<span class="label-input100">Message:</span>
 					<textarea class="input100" name="message" placeholder="Your Comment..."></textarea>
 					<span class="focus-input100"></span>
-				</div>
+				</div-->
 
 				<!--div>
 				<input name = "image1"type="file" id="actual-btn"/>
@@ -109,14 +109,14 @@ else{
 								
 				</div-->
 
-				<div class="container-contact100-form-btn">
+				<!--div class="container-contact100-form-btn">
 					<button id = "submit" class="contact100-form-btn" name="submit" type="submit">
 						<span>
-							<a href="nftmint2.php">Submit</a>
+							<a href="">Submit</a>
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
-				</div>
+				</div-->
 			</form>
 
 		</div>
@@ -667,6 +667,7 @@ else{
 	}
 ];
 	var mycontract;
+   
     $(document).ready(async function(){
 
 	var IsMetamask = await CheckMetamaskConnection();
@@ -689,19 +690,43 @@ else{
     }
 	
 
-	});
-  
-	$('#submit').click(async function()
-	{
+	web3.eth.getAccounts().then(async function(accounts){
+	 var acc = accounts[0];
+     //console.log(acc);
 
-	  var ag1 = parseInt($('#tokenid').val());
-      var ag2 = $('#nname').val();
-      var ag3 = $('#uri').val();
+	 /*var bruh1 = await mycontract.methods.getAddress(1).send({from: acc});
+	  var eventlength = bruh1.events.eventaddress.returnValues.owneraddress; 
+	  console.log(bruh1);
+	  console.log(eventlength);
+	 
+*/
+	  //var ag1 = parseInt($('#tokenid').val());
+      //var ag2 = $('#nname').val();
+      //var ag3 = $('#uri').val();
+    var rg1 = sessionStorage.getItem('balayya1');
+    var rg2 = sessionStorage.getItem('balayya2');
+    var rg3 = sessionStorage.getItem('balayya3');
+      
+        
+      console.log(rg1);
+      console.log(rg2);
 
-		sessionStorage.setItem('balayya1',ag1);
-		sessionStorage.setItem('balayya2',ag2);
-		sessionStorage.setItem('balayya3',ag3);
+	  var det = await mycontract.methods.mint(rg2,acc,rg1,rg3).send({from: acc});
+	  console.log("det:"+ det);
+	  console.log("minting complete");
+	  console.log(rg1);
+	  //console.log(12);
+	  console.log(rg2);
 
+
+	 }).catch(function(tx){
+         console.log("babu");
+         console.log(tx);
+	 })
+
+	   
+	 
+	
 	});
 
 	</script>
